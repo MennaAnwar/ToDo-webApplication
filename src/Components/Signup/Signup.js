@@ -54,9 +54,9 @@ export default function Signup() {
         id="email"
         name="email"
         placeholder="Email"
-        {...register("email", { required: true })}
+        {...register("email", { required: "This field is required" })}
       />
-      {errors.email && <p className="error-msg">This field is required</p>}
+      {errors.email && <p className="error-msg">{errors.email.message}</p>}
       <input
         className="form-group__input"
         type="password"
